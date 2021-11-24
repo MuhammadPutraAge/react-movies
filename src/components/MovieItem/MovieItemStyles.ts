@@ -12,6 +12,7 @@ export const MovieItemContainer = styled.div`
 export const MovieItemPoster = styled.img`
   width: 12rem;
   margin-right: 1.6rem;
+  z-index: 99;
 `;
 
 export const MovieItemContent = styled.div`

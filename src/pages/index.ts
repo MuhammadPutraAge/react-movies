@@ -1,3 +1,5 @@
-import HomePage from "./HomePage";
+import HomePage from "./HomePage/HomePage";
+import MovieDetailsPage from "./MovieDetailsPage/MovieDetailsPage";
+import NotFoundPage from "./NotFoundPage/NotFoundPage";
 
-export { HomePage };
+export { HomePage, MovieDetailsPage, NotFoundPage };

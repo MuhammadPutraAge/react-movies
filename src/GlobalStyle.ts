@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { colors } from "./utils";
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -27,6 +28,13 @@ export const Container = styled.div`
   @media screen and (max-width: 480px) {
     padding: 0 2rem;
   }
+`;
+
+export const NotFoundText = styled.p`
+  text-align: center;
+  font-size: 2.4rem;
+  color: ${colors.black};
+  padding: 2.4rem;
 `;
 
 export default GlobalStyle;

@@ -64,7 +64,9 @@ export const NavBrandTitle = styled.h1`
 
 export const NavMainContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
+  position: relative;
   @media screen and (max-width: 768px) {
     width: 100%;
   }
@@ -81,6 +83,30 @@ export const NavSearchContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const NavRecommendedContainer = styled.div`
+  width: 100%;
+  max-height: 24rem;
+  background-color: ${colors.white};
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0.4rem ${colors.transparentBlack};
+  position: absolute;
+  top: 5rem;
+  overflow: hidden;
+  overflow-y: scroll;
+`;
+
+export const NavRecommendedItem = styled.p`
+  font-size: 1.4rem;
+  color: ${colors.black};
+  padding: 1.6rem 2.4rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${colors.grey2};
+  }
+`;
+
 export const NavSearchInput = styled.input`
   outline: none;
   border: none;

@@ -1,4 +1,5 @@
 import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import { MovieItem } from "..";
 import { MovieListItem } from "../../redux/movie/movieTypes";
 
@@ -13,28 +14,44 @@ const dummyItem: MovieListItem = {
 
 describe("Movie Item Component", () => {
   test("check poster is exist", () => {
-    const { getByTestId } = render(<MovieItem movie={dummyItem} />);
+    const { getByTestId } = render(
+      <BrowserRouter>
+        <MovieItem movie={dummyItem} onPosterClick={() => {}} />
+      </BrowserRouter>
+    );
     const posterEl = getByTestId("poster");
 
     expect(posterEl).toBeTruthy();
   });
 
   test("check movie title is exist", () => {
-    const { getByTestId } = render(<MovieItem movie={dummyItem} />);
+    const { getByTestId } = render(
+      <BrowserRouter>
+        <MovieItem movie={dummyItem} onPosterClick={() => {}} />
+      </BrowserRouter>
+    );
     const movieTitleEl = getByTestId("movie-title");
 
     expect(movieTitleEl).toBeTruthy();
   });
 
   test("check year is exist", () => {
-    const { getByTestId } = render(<MovieItem movie={dummyItem} />);
+    const { getByTestId } = render(
+      <BrowserRouter>
+        <MovieItem movie={dummyItem} onPosterClick={() => {}} />
+      </BrowserRouter>
+    );
     const yearEl = getByTestId("year");
 
     expect(yearEl).toBeTruthy();
   });
 
   test("check type is exist", () => {
-    const { getByTestId } = render(<MovieItem movie={dummyItem} />);
+    const { getByTestId } = render(
+      <BrowserRouter>
+        <MovieItem movie={dummyItem} onPosterClick={() => {}} />
+      </BrowserRouter>
+    );
     const typeEl = getByTestId("type");
 
     expect(typeEl).toBeTruthy();

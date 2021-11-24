@@ -15,7 +15,7 @@ export const getMovies = createAsyncThunk<
   { rejectValue: string; state: RootState }
 >("movie/list", async ({ s, page }, { rejectWithValue, getState }) => {
   try {
-    const query = s === "" ? "avengers" : s;
+    const query = s === "" ? "batman" : s;
     const prevMovieList = getState().movie.list;
 
     const { data } = await API.get(
@@ -42,7 +42,11 @@ export const getMovieByID = createAsyncThunk<
       `/?apikey=${process.env.REACT_APP_API_KEY}&i=${i}`
     );
 
-    return data;
+    if (!data.Error) {
+      return data;
+    } else {
+      return rejectWithValue(data.Error);
+    }
   } catch (e: any) {
     return rejectWithValue(e.response.data.Error);
   }

@@ -1,13 +1,17 @@
 import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { Navbar } from "..";
+import { store } from "../../redux";
 
 describe("Navbar Component", () => {
   test("subtitle renders correct subtitle text", () => {
     const navbar = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      </Provider>
     );
     const subtitleEl = navbar.getByTestId("subtitle");
 
@@ -16,9 +20,11 @@ describe("Navbar Component", () => {
 
   test("title renders correct title text", () => {
     const navbar = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      </Provider>
     );
     const titleEl = navbar.getByTestId("title");
 
@@ -27,9 +33,11 @@ describe("Navbar Component", () => {
 
   test("check search input is exist", () => {
     const navbar = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      </Provider>
     );
     const searchEl = navbar.getByTestId("search");
 
@@ -38,9 +46,11 @@ describe("Navbar Component", () => {
 
   test("check login button is exist", () => {
     const navbar = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      </Provider>
     );
     const loginBtnEl = navbar.getByTestId("login-btn");
 
@@ -49,9 +59,11 @@ describe("Navbar Component", () => {
 
   test("check register button is exist", () => {
     const navbar = render(
-      <BrowserRouter>
-        <Navbar />
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Navbar />
+        </BrowserRouter>
+      </Provider>
     );
     const registerBtnEl = navbar.getByTestId("register-btn");
 

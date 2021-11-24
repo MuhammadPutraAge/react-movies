@@ -43,6 +43,7 @@ export interface MovieItem {
 export interface MovieState {
   loading: boolean;
   search: string;
+  page: number;
   list: MovieListItem[];
   data: MovieItem | null;
   error: boolean;

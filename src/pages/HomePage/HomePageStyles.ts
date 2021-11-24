@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../utils";
+import { colors } from "../../utils";
 
 export const HomePageContainer = styled.div`
   padding: 4rem 0;

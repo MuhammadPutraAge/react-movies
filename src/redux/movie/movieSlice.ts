@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { getMovieByID, getMovies } from "./movieActions";
 import { MovieState } from "./movieTypes";
 
 const initialState: MovieState = {
   loading: false,
   search: "",
+  page: 1,
   list: [],
   data: null,
   error: false,
@@ -14,7 +15,16 @@ const initialState: MovieState = {
 const movieSlice = createSlice({
   name: "movie",
   initialState,
-  reducers: {},
+  reducers: {
+    resetMovie: (state, action: PayloadAction<string>) => {
+      state.loading = false;
+      state.search = action.payload;
+      state.page = 1;
+      state.list = [];
+      state.error = false;
+      state.message = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMovies.pending, (state) => {
@@ -23,6 +33,7 @@ const movieSlice = createSlice({
       .addCase(getMovies.fulfilled, (state, action) => {
         state.loading = false;
         state.list = action.payload.list;
+        state.page = action.payload.page;
       })
       .addCase(getMovies.rejected, (state, action) => {
         state.loading = false;
@@ -43,5 +54,7 @@ const movieSlice = createSlice({
       });
   },
 });
+
+export const { resetMovie } = movieSlice.actions;
 
 export default movieSlice.reducer;
