@@ -4,7 +4,9 @@ Ini adalah instruksi untuk menjalankan aplikasi React Movies ini di local anda.
 
 ## 1. Clone repository
 
-Clone repository dengan mengetikkan `git clone https://github.com/MuhammadPutraAge/react-movies.git` pada terminal atau command prompt
+Clone repository dengan mengetikkan `git clone https://github.com/MuhammadPutraAge/react-movies.git` pada terminal atau command prompt.
+
+Setelah proses clone selesai, masuk ke folder react-movies yang baru saja di clone dengan perintah `cd react-movies`
 
 ## 2. Install Dependencies
 
